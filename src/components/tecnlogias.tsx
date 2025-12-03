@@ -39,8 +39,8 @@ export default function Tecnologias() {
                 >
                     {minhasTecnologias.map((tec, index) => (
                         <SwiperSlide key={index} className="!w-auto">
-                            <div className=" rounded-2xl shadow px-4 py-1 flex justify-center items-center text-sm w-32 h-10
-                        shadow-sm mb-2 cursor-pointer border">
+                            <div className="bg-white dark:bg-slate-700 text-gray-800 dark:text-gray-200 rounded-2xl shadow dark:shadow-slate-800/50 px-4 py-1 flex justify-center items-center text-sm w-32 h-10
+                        shadow-sm mb-2 cursor-pointer border border-gray-200 dark:border-slate-600 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-slate-600">
                                 {tec}
                             </div>
                         </SwiperSlide>

@@ -5,18 +5,16 @@
   --foreground: #171717;
 }
 
+:root.dark {
+  --background: #1e293b;
+  --foreground: #f1f5f9;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -25,7 +23,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   cursor: url("../../public/images/cursor.png"),auto;
   scroll-behavior: smooth;
-  color: #0a0a0a;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Garantir que o html também tenha o background correto */
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+  transition: background-color 0.3s ease;
 }
 
 html {
@@ -81,4 +86,58 @@ body::-webkit-scrollbar {
 ::-webkit-scrollbar {
   width: 6px;   /* vertical */
   height: 2px;  /* horizontal */
+}
+
+/* Transições suaves para todos os elementos */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Rainbow glow animation for icons - suave e sutil */
+@keyframes rainbow-glow {
+  0% {
+    color: #ff6b6b;
+    filter: drop-shadow(0 0 3px #ff6b6b30) drop-shadow(0 0 6px #ff6b6b15);
+  }
+  14.28% {
+    color: #ffa726;
+    filter: drop-shadow(0 0 3px #ffa72630) drop-shadow(0 0 6px #ffa72615);
+  }
+  28.57% {
+    color: #ffeb3b;
+    filter: drop-shadow(0 0 3px #ffeb3b30) drop-shadow(0 0 6px #ffeb3b15);
+  }
+  42.86% {
+    color: #66bb6a;
+    filter: drop-shadow(0 0 3px #66bb6a30) drop-shadow(0 0 6px #66bb6a15);
+  }
+  57.14% {
+    color: #42a5f5;
+    filter: drop-shadow(0 0 3px #42a5f530) drop-shadow(0 0 6px #42a5f515);
+  }
+  71.43% {
+    color: #7986cb;
+    filter: drop-shadow(0 0 3px #7986cb30) drop-shadow(0 0 6px #7986cb15);
+  }
+  85.71% {
+    color: #ab47bc;
+    filter: drop-shadow(0 0 3px #ab47bc30) drop-shadow(0 0 6px #ab47bc15);
+  }
+  100% {
+    color: #ff6b6b;
+    filter: drop-shadow(0 0 3px #ff6b6b30) drop-shadow(0 0 6px #ff6b6b15);
+  }
+}
+
+.animate-rainbow-glow {
+  animation: rainbow-glow 6s ease-in-out infinite;
+}
+
+/* Cores suaves para o scrollbar no dark mode */
+.dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(148, 163, 184, 0.5);
 }

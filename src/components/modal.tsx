@@ -58,16 +58,16 @@ export default function Modal({
   return (
     <div
       className={`z-50 fixed inset-0 flex w-full h-full justify-center 
-        items-center backdrop-blur-sm backdrop-brightness-50  bg-opacity-30 p-3 
+        items-center backdrop-blur-sm backdrop-brightness-50 dark:backdrop-brightness-25 bg-opacity-30 p-3 
         transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0 "
 
         } `}
     >
       <div
-        className={`bg-white rounded-2xl shadow-lg flex flex-col 
+        className={`bg-white dark:bg-slate-800 rounded-2xl shadow-lg dark:shadow-slate-900/50 flex flex-col 
     w-full max-w-5xl h-11/12 max-h-[90vh] p-5
-    transform transition-transform duration-300 
-    overflow-y-auto
+    transform transition-all duration-300 
+    overflow-y-auto border border-gray-200 dark:border-slate-600
     ${animate ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
         onClick={(e) => e.stopPropagation()}
       >
@@ -76,31 +76,31 @@ export default function Modal({
           <button onClick={onClose}>
             <IoCloseCircleOutline
               size={30}
-              color="bg-gray-800"
-              className="cursor-pointer"
+              className="cursor-pointer text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 transition-colors duration-300"
             />
           </button>
         </div>
 
         <div className="w-full h-4/6 flex justify-center items-center p-5 pl-5 pr-5">
-          <div className="relative w-full h-full rounded-2xl shadow-lg">
+          <div className="relative w-full h-full rounded-2xl shadow-lg dark:shadow-slate-900/50">
             <Image
               src={image || "/default.jpg"}
               alt="Modal Image"
               fill
               style={{ objectFit: 'cover' }}
+              className="rounded-2xl"
             />
           </div>
         </div>
         <div className="pl-5 max-h-28 bg ">
-          <h1 className="text-gray-800 font-bold text-2xl mb-1">{title}</h1>
-          <p className={`max-h-17 break-words overflow-auto`}>{description}</p>
+          <h1 className="text-gray-800 dark:text-gray-200 font-bold text-2xl mb-1 transition-colors duration-300">{title}</h1>
+          <p className={`max-h-17 break-words overflow-auto text-gray-600 dark:text-gray-400 transition-colors duration-300`}>{description}</p>
 
           <ul className="flex flex-wrap gap-5 mt-2  max-w-full">
             {tecnologias?.map((tec, index) => (
               <li
                 key={index}
-                className="bg-gray-200 rounded-2xl shadow px-4 py-1 flex justify-center items-center text-sm "
+                className="bg-gray-200 dark:bg-slate-600 text-gray-800 dark:text-gray-200 rounded-2xl shadow px-4 py-1 flex justify-center items-center text-sm transition-colors duration-300"
               >
                 {tec}
               </li>
@@ -111,7 +111,7 @@ export default function Modal({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex bg-black text-white rounded-2xl px-5 py-3 shadow-lg mt-3 hover:bg-gray-800 transition w-48 justify-between"
+            className="flex bg-gray-800 dark:bg-slate-600 text-white rounded-2xl px-5 py-3 shadow-lg mt-3 hover:bg-gray-700 dark:hover:bg-slate-500 transition-colors duration-300 w-48 justify-between"
           >
             Ver no GitHub <CiShare1 size={25} />
           </a>

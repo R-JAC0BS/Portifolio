@@ -43,18 +43,18 @@ export default function About() {
 
       {/* Texto e botão */}
       <div className="md:col-span-2 space-y-6">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-200 transition-colors duration-300">
           {about?.nome ?? "Carregando..."} <br />
           <em>Desenvolvedor Full Stack</em>
         </h1>
-        <p className="text-gray-600 text-justify">
+        <p className="text-gray-600 dark:text-gray-400 text-justify transition-colors duration-300">
           {about?.descricao ?? "Carregando descrição..."}
         </p>
 
         <div className="flex justify-center mt-6 items-start">
           <a
-            className="inline-flex items-center justify-center bg-gray-800 text-white
-                       rounded-full hover:bg-gray-700 transition-colors duration-300
+            className="inline-flex items-center justify-center bg-gray-800 dark:bg-slate-600 text-white
+                       rounded-full hover:bg-gray-700 dark:hover:bg-slate-500 transition-colors duration-300
                        h-12 w-full sm:w-96 text-lg font-semibold
                        shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 cursor-pointer"
             rel="noopener noreferrer"

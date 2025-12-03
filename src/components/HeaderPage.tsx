@@ -3,20 +3,26 @@
 import { PiGithubLogo } from "react-icons/pi";
 import { CiLinkedin } from "react-icons/ci";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
+const decoration = "relative before:absolute before:bottom-0 font before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:bg-gray-800 dark:before:bg-gray-200 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100";
 
-const decoration = " relative before:absolute before:bottom-0 font before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:bg-black  before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100";
+const rainbowIcon = "transition-all duration-700 hover:scale-105 filter hover:drop-shadow-lg";
 
 export default function HeaderPage() {
   return (
     <header
       className="w-11/12 sm:w-8/12 max-w-7xl h-14 px-4 fixed top-3 left-1/2 -translate-x-1/2 z-40
-                 flex justify-center sm:justify-end items-center rounded-full shadow-sm
-                 bg-white/50 backdrop-blur-xl backdrop-saturate-200
-                 border border-white/10 text-black
-                 bg-clip-padding overflow-hidden"
+                 flex justify-between items-center rounded-full shadow-sm
+                 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl backdrop-saturate-200
+                 border border-gray-200/20 dark:border-slate-600/20 
+                 text-gray-800 dark:text-gray-200
+                 bg-clip-padding overflow-hidden transition-all duration-300"
       id="header"
     >
+      {/* Logo ou espaço vazio para centralizar o menu */}
+      <div className="w-8 sm:w-0"></div>
+      
       <ul className="flex flex-row gap-4 sm:gap-7 items-center font-bold cursor-pointer text-xs sm:text-base">
         <li>
           <Link className={decoration} href="#sobre">
@@ -43,8 +49,12 @@ export default function HeaderPage() {
             href="https://github.com/R-JAC0BS"
             target="_blank"
             rel="noopener noreferrer"
+            className={rainbowIcon}
           >
-            <PiGithubLogo size={25} />
+            <PiGithubLogo
+              size={25}
+              className="animate-rainbow-glow"
+            />
           </a>
         </li>
         <li>
@@ -52,11 +62,20 @@ export default function HeaderPage() {
             href="https://www.linkedin.com/in/roberto-jacobs-a620302b3"
             target="_blank"
             rel="noopener noreferrer"
+            className={rainbowIcon}
           >
-            <CiLinkedin size={25} />
+            <CiLinkedin
+              size={25}
+              className="animate-rainbow-glow"
+            />
           </a>
         </li>
       </ul>
+
+      {/* Botão de toggle do tema */}
+      <div className="flex items-center">
+        <ThemeToggle />
+      </div>
     </header>
   );
 }
