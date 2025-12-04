@@ -130,7 +130,7 @@ body::-webkit-scrollbar {
 }
 
 .animate-rainbow-glow {
-  animation: rainbow-glow 6s ease-in-out infinite;
+  animation: rainbow-glow 12s ease-in-out infinite;
 }
 
 /* Cores suaves para o scrollbar no dark mode */
