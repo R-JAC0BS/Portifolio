@@ -7,8 +7,6 @@ import Link from "next/link";
 
 const decoration = "relative before:absolute before:bottom-0 font before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:bg-gray-800 dark:before:bg-gray-200 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100";
 
-const rainbowIcon = "transition-all duration-700 hover:scale-105 filter hover:drop-shadow-lg";
-
 export default function HeaderPage() {
   return (
     <header
