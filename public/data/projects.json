@@ -2,7 +2,7 @@
     "Projects" : [
         {
             "id" : 1,
-            "title" : "Portifólio Minimalista ",
+            "title" : "Portifólio ",
             "description" : 
             "Projeto de portfólio pessoal construído com Next.js, TypeScript e Tailwind CSS, com o objetivo de apresentar minhas competências como desenvolvedor(a), incluindo experiências, habilidades técnicas e projetos realizados de forma responsiva e moderna.",
             "image" : "/images/PortiFolioMockUp.png",
