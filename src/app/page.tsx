@@ -5,7 +5,7 @@ import About from "@/components/About";
 import Tecnologias from "@/components/tecnlogias";
 import Contato from "@/components/contato"
 import BackToTopButton from "@/components/BackToTopButton";
-import { title } from "process";
+
 
 export const metadata = {
   title: "Portifolio"
