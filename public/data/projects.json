@@ -37,7 +37,7 @@
         },
         {
           "id" : 3,
-          "title" : "CuraApp",
+          "title" : "CuraApp - api - java",
           "description" : 
           "Aplicação full stack desenvolvida com Java (Spring Boot) e HTML/CSS/JS puros, focada na gestão de pacientes (CRUD) e no monitoramento ambiental em tempo real via sensores IoT. Utiliza RabbitMQ para comunicação assíncrona, WebSocket para atualização em tempo real e autenticação com JWT. Dados captados por sensores (DHT11, MQ-135, LM393, LDR) são enviados por um Raspberry Pi atuando como gateway.",
           "image" : "/images/DeckMockUp.png",
@@ -60,7 +60,7 @@
       },
            {
             "id" : 4,
-            "title" : "GoBarApi (BackEnd)",
+            "title" : "GoBarApi - Java",
             "description" : 
             "Back-end desenvolvido para um aplicativo de geolocalização de bares, com funcionalidades completas de CRUD (criação, leitura, atualização e exclusão). A aplicação permite aos usuários adicionar e remover bares, favoritar estabelecimentos, deixar comentários e utilizar autenticação JWT para gerenciamento seguro de sessões e controle de acesso.",
             "image" : "/images/MockUpGoBar.png",
