@@ -5,7 +5,7 @@
             "title" : "WorkoutTracker ",
             "description" : 
             "O Workout Tracker é um aplicativo completo para gerenciamento de treinos que permite criar divisões personalizadas, acompanhar o progresso de cada exercício e visualizar estatísticas detalhadas do seu desempenho ao longo do tempo.",
-            "image" : "/images/SansungAppGym.png",
+            "image" : "/images/App.png",
             "details" : {
                 "tecnologias" : [
                     "Flutter",
