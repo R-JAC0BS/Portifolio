@@ -52,7 +52,30 @@ export default function Projects() {
             768: { slidesPerView: 2, spaceBetween: 25 },
             1024: { slidesPerView: 3, spaceBetween: 30 },
           }}
-          className="!pb-8"
+          onSlideChange={(swiper) => {
+            const slides = swiper.slides;
+            slides.forEach((slide, index) => {
+              const slideElement = slide as HTMLElement;
+              if (index === swiper.activeIndex + 1) {
+                slideElement.style.transform = 'scale(1.05)';
+                slideElement.style.zIndex = '10';
+              } else {
+                slideElement.style.transform = 'scale(1)';
+                slideElement.style.zIndex = '1';
+              }
+            });
+          }}
+          onInit={(swiper) => {
+            const slides = swiper.slides;
+            slides.forEach((slide, index) => {
+              const slideElement = slide as HTMLElement;
+              if (index === swiper.activeIndex + 1) {
+                slideElement.style.transform = 'scale(1.05)';
+                slideElement.style.zIndex = '10';
+              }
+            });
+          }}
+          className="!pb-8 !pt-6"
         >
         <Modal isOpen={openModal} onClose={() => setOpenModal(false)} title={selectProject?.title}
           description={selectProject?.description} tecnologias={selectProject?.details.tecnologias}
