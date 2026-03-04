@@ -6,7 +6,7 @@ import Link from "next/link";
 
 
 const decoration = "relative before:absolute before:bottom-0 font before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100" as const;
-const decorationStyle = { '--before-bg': 'var(--title-color-dark)' } as React.CSSProperties;
+
 
 export default function HeaderPage() {
   return (
