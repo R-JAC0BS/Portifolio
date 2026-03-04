@@ -46,7 +46,7 @@ export default function Contato() {
 
   return (
     <div className="flex flex-col items-center justify-center p-3 mt-2 h-1/3 resize-none" id="contato">
-      <h2 className="text-3xl font-bold mb-6 text-black">Entre em contato</h2>
+      <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--title-color)' }}>Entre em contato</h2>
       <div className="flex flex-col md:flex-row w-full justify-center items-center md:items-start gap-16">
      
         <div className="flex flex-col gap-4 w-full md:w-1/3 pt-8">
@@ -60,32 +60,39 @@ export default function Contato() {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="bg-white p-6 rounded-3xl shadow-lg w-full md:w-5/12 items-center justify-center resize-none mt-10 border border-gray-200"
+          className="p-6 rounded-3xl shadow-lg w-full md:w-5/12 items-center justify-center resize-none mt-10 border border-gray-200"
+          style={{ backgroundColor: 'var(--container-color)' }}
         >
           <input
             type="text"
             name="name"
             placeholder="Seu nome"
             required
-            className="w-full mb-4 p-3 border border-gray-300 rounded bg-white text-black placeholder-gray-500"
+            className="w-full mb-4 p-3 border border-gray-300 rounded"
+            style={{ backgroundColor: 'var(--container-color)', color: 'var(--title-color)' }}
           />
           <input
             type="email"
             name="email"
             placeholder="Seu email"
             required
-            className="w-full mb-4 p-3 border border-gray-300 rounded bg-white text-black placeholder-gray-500"
+            className="w-full mb-4 p-3 border border-gray-300 rounded"
+            style={{ backgroundColor: 'var(--container-color)', color: 'var(--title-color)' }}
           />
           <textarea
             name="message"
             placeholder="Sua mensagem"
             required
             rows={6}
-            className="w-full mb-4 p-3 border border-gray-300 rounded resize-none bg-white text-black placeholder-gray-500"
+            className="w-full mb-4 p-3 border border-gray-300 rounded resize-none"
+            style={{ backgroundColor: 'var(--container-color)', color: 'var(--title-color)' }}
           ></textarea>
           <button
             type="submit"
-            className="w-4/12 bg-gray-800 text-white py-3 hover:bg-gray-700 transition-all duration-300 cursor-pointer rounded-3xl mx-auto block justify-center items-center flex"
+            className="w-4/12 text-white py-3 transition-all duration-300 cursor-pointer rounded-xl mx-auto block justify-center items-center flex"
+            style={{ backgroundColor: 'var(--button-color)' }}
+            onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+            onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
           >
             {!send ? "Enviar mensagem " : <FaCheck size={24} />}
           </button>

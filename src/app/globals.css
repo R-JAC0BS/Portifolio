@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 :root {
+  --hue: 0;
+  --sat: 7%;
+  --title-color: hsl(var(--hue), var(--sat), 20%);
+  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+  --text-color: hsl(var(--hue), var(--sat), 46%);
+  --body-color: hsl(var(--hue),var(--sat),98%);
+  --container-color: #ffffff;
+  --button-color: #372f2f;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -13,7 +21,7 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--body-color);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   cursor: url("../../public/images/cursor.png"),auto;
@@ -24,7 +32,7 @@ body {
 /* Garantir que o html também tenha o background correto */
 html {
   scroll-behavior: smooth;
-  background: var(--background);
+  background: var(--body-color);
   transition: background-color 0.3s ease;
 }
 
@@ -121,6 +129,19 @@ body::-webkit-scrollbar {
   100% {
     color: #ff6b6b;
     filter: drop-shadow(0 0 3px #ff6b6b30) drop-shadow(0 0 6px #ff6b6b15);
+  }
+}
+
+/* Profile image animation */
+@keyframes profile__animate {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
 }
 

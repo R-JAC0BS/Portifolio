@@ -5,17 +5,18 @@ import { CiLinkedin } from "react-icons/ci";
 import Link from "next/link";
 
 
-const decoration = "relative before:absolute before:bottom-0 font before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:bg-gray-800 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100";
+const decoration = "relative before:absolute before:bottom-0 font before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100" as const;
+const decorationStyle = { '--before-bg': 'var(--title-color-dark)' } as React.CSSProperties;
 
 export default function HeaderPage() {
   return (
     <header
       className="w-11/12 sm:w-8/12 max-w-7xl h-14 px-4 fixed top-3 left-1/2 -translate-x-1/2 z-40
                  flex justify-between items-center rounded-full shadow-sm
-                 bg-white/80 backdrop-blur-xl backdrop-saturate-200
+                 backdrop-blur-xl backdrop-saturate-200
                  border border-gray-200/20
-                 text-gray-800
                  bg-clip-padding overflow-hidden transition-all duration-300"
+      style={{ backgroundColor: 'var(--container-color)', color: 'var(--title-color)' }}
       id="header"
     >
       {/* Logo ou espaço vazio para centralizar o menu */}
@@ -23,22 +24,22 @@ export default function HeaderPage() {
       
       <ul className="flex flex-row gap-4 sm:gap-7 items-center font-bold cursor-pointer text-xs sm:text-base">
         <li>
-          <Link className={decoration} href="#sobre">
+          <Link className={decoration} href="#sobre" style={{ color: 'var(--title-color)' }}>
             Sobre mim
           </Link>
         </li>
         <li>
-          <Link className={decoration} href="#projetos">
+          <Link className={decoration} href="#projetos" style={{ color: 'var(--title-color)' }}>
             Projetos
           </Link>
         </li>
         <li>
-          <Link className={decoration} href="#tecnologias">
+          <Link className={decoration} href="#tecnologias" style={{ color: 'var(--title-color)' }}>
             Tecnologias
           </Link>
         </li>
         <li>
-          <Link className={decoration} href="#contato">
+          <Link className={decoration} href="#contato" style={{ color: 'var(--title-color)' }}>
             Contato
           </Link>
         </li>
@@ -51,7 +52,8 @@ export default function HeaderPage() {
           >
             <PiGithubLogo
               size={25}
-              className="text-gray-800 dark:text-gray-200 transition-colors duration-300"
+              style={{ color: 'var(--title-color)' }}
+              className="transition-colors duration-300"
             />
           </a>
         </li>
@@ -64,7 +66,8 @@ export default function HeaderPage() {
           >
             <CiLinkedin
               size={25}
-              className="text-gray-800 dark:text-gray-200 transition-colors duration-300"
+              style={{ color: 'var(--title-color)' }}
+              className="transition-colors duration-300"
             />
           </a>
         </li>

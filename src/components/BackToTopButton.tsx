@@ -34,7 +34,10 @@ export default function BackToTopButton() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="bg-gray-800 dark:bg-slate-600 text-white rounded-full p-3 hover:bg-gray-700 dark:hover:bg-slate-500 transition-colors duration-300 shadow-lg dark:shadow-slate-900/50"
+          className="text-white rounded-xl p-3 transition-all duration-300 shadow-lg"
+          style={{ backgroundColor: 'var(--button-color)' }}
+          onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+          onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
         >
           <FaArrowUp />
         </button>

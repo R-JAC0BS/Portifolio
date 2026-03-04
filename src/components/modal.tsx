@@ -64,11 +64,12 @@ export default function Modal({
         } `}
     >
       <div
-        className={`bg-white rounded-2xl shadow-lg flex flex-col 
+        className={`rounded-2xl shadow-lg flex flex-col 
     w-full max-w-5xl h-11/12 max-h-[90vh] p-5
     transform transition-all duration-300 
     overflow-y-auto border border-gray-200
     ${animate ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+        style={{ backgroundColor: 'var(--container-color)' }}
         onClick={(e) => e.stopPropagation()}
       >
 
@@ -76,7 +77,8 @@ export default function Modal({
           <button onClick={onClose}>
             <IoCloseCircleOutline
               size={30}
-              className="cursor-pointer text-gray-800 hover:text-gray-600 transition-colors duration-300"
+              className="cursor-pointer transition-colors duration-300"
+              style={{ color: 'var(--title-color)' }}
             />
           </button>
         </div>
@@ -93,14 +95,15 @@ export default function Modal({
           </div>
         </div>
         <div className="pl-5 max-h-28 bg ">
-          <h1 className="text-black font-bold text-2xl mb-1 transition-colors duration-300">{title}</h1>
-          <p className={`max-h-17 break-words overflow-auto text-black transition-colors duration-300`}>{description}</p>
+          <h1 className="font-bold text-2xl mb-1 transition-colors duration-300" style={{ color: 'var(--title-color)' }}>{title}</h1>
+          <p className={`max-h-17 break-words overflow-auto transition-colors duration-300`} style={{ color: 'var(--text-color)' }}>{description}</p>
 
           <ul className="flex flex-wrap gap-5 mt-2  max-w-full">
             {tecnologias?.map((tec, index) => (
               <li
                 key={index}
-                className="bg-gray-200 text-black rounded-2xl shadow px-4 py-1 flex justify-center items-center text-sm transition-colors duration-300"
+                className="rounded-2xl shadow px-4 py-1 flex justify-center items-center text-sm transition-colors duration-300"
+                style={{ backgroundColor: 'var(--body-color)', color: 'var(--title-color)' }}
               >
                 {tec}
               </li>
@@ -111,7 +114,10 @@ export default function Modal({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex bg-gray-800 text-white rounded-2xl px-5 py-3 shadow-lg mt-3 hover:bg-gray-700 transition-colors duration-300 w-48 justify-between"
+            className="flex text-white rounded-xl px-5 py-3 shadow-lg mt-3 transition-all duration-300 w-48 justify-between"
+            style={{ backgroundColor: 'var(--button-color)' }}
+            onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+            onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
           >
             Ver no GitHub <CiShare1 size={25} />
           </a>

@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col pt-20 bg-gray-50 min-h-screen p-8 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] transition-colors duration-300">
+    <div className="flex flex-col pt-20 min-h-screen p-8 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] transition-colors duration-300" style={{ backgroundColor: 'var(--body-color)' }}>
       <HeaderPage />
       <MarginComponent />
       <About />
