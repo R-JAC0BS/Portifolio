@@ -2,31 +2,31 @@
     "BackEnd": {
         "Titulo": "BackEnd",
         "tecnologias": [
-            { "nome": "Java", "icon": "FaJava" },
-            { "nome": "Go", "icon": "SiGo" },
-            { "nome": "JavaScript", "icon": "SiJavascript" }
+            { "nome": "Java", "icon": "FaJava", "iconColor": "#f89820" },
+            { "nome": "Go", "icon": "SiGo", "iconColor": "#00ADD8" },
+            { "nome": "JavaScript", "icon": "SiJavascript", "iconColor": "#F7DF1E" }
         ]
     },
     "FrontEnd": {
         "Titulo": "FrontEnd",
         "tecnologias": [
-            { "nome": "React Web", "icon": "FaReact" },
-            { "nome": "Flutter", "icon": "SiFlutter" }
+            { "nome": "React Web", "icon": "FaReact", "iconColor": "#61DAFB" },
+            { "nome": "Flutter", "icon": "SiFlutter", "iconColor": "#54C5F8" }
         ]
     },
     "Devops": {
         "Titulo": "Devops",
         "tecnologias": [
-            { "nome": "Git", "icon": "FaGitAlt" },
-            { "nome": "Docker", "icon": "FaDocker" },
-            { "nome": "AWS", "icon": "FaAws" }
+            { "nome": "Git", "icon": "FaGitAlt", "iconColor": "#F05032" },
+            { "nome": "Docker", "icon": "FaDocker", "iconColor": "#2496ED" },
+            { "nome": "AWS", "icon": "FaAws", "iconColor": "#FF9900" }
         ]
     },
     "db": {
         "Titulo": "DataBase",
         "tecnologias": [
-            { "nome": "PostgreSQL", "icon": "SiPostgresql" },
-            { "nome": "MongoDB", "icon": "SiMongodb" }
+            { "nome": "PostgreSQL", "icon": "SiPostgresql", "iconColor": "#336791" },
+            { "nome": "MongoDB", "icon": "SiMongodb", "iconColor": "#47A248" }
         ]
     }
 }

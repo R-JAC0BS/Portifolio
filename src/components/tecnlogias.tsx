@@ -8,6 +8,7 @@ import { IconType } from "react-icons";
 interface Tecnologia {
     nome: string;
     icon: string;
+    iconColor?: string;
 }
 
 interface TecnologiaGroup {
@@ -51,7 +52,7 @@ export default function Tecnologias() {
                                 return (
                                     <span key={j} className="rounded-xl px-4 py-2 text-base text-white border border-gray-200 transition-colors duration-300 hover:opacity-80 flex items-center gap-2"
                                         style={{ backgroundColor: 'var(--button-color)' }}>
-                                        {Icon && <Icon size={18} />}
+                                        {Icon && <Icon size={18} color={tec.iconColor} />}
                                         {tec.nome}
                                     </span>
                                 );

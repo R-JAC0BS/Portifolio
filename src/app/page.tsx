@@ -1,4 +1,5 @@
 import HeaderPage from "@/components/HeaderPage";
+import Hero from "@/components/Hero";
 import MarginComponent from "@/components/MarginComponent";
 import Projects from "@/components/projects";
 import About from "@/components/About";
@@ -28,6 +29,7 @@ export default function Home() {
       {/* Spotlight direita inferior */}
       <div className="pointer-events-none fixed bottom-[-60px] right-[-60px] w-[180px] h-[180px] rounded-full blur-[70px] opacity-20" style={{ background: 'radial-gradient(ellipse at top, #6366f1 0%, #7c3aed 30%, #10b981 60%, transparent 80%)' }} />
       <HeaderPage />
+      <Hero />
       <MarginComponent />
       <About />
       <Projects />
