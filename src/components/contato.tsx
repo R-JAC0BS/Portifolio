@@ -60,7 +60,7 @@ export default function Contato() {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="p-6 rounded-3xl shadow-lg w-full md:w-5/12 items-center justify-center resize-none mt-10 border border-gray-200"
+          className="relative z-10 p-6 rounded-3xl shadow-lg w-full md:w-5/12 items-center justify-center resize-none mt-10 border border-gray-200"
           style={{ backgroundColor: 'var(--container-color)' }}
         >
           <input

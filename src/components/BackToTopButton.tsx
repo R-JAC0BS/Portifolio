@@ -34,8 +34,7 @@ export default function BackToTopButton() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="text-white rounded-xl p-3 transition-all duration-300 shadow-lg"
-          style={{ backgroundColor: 'var(--button-color)' }}
+          className=" rounded-xl p-3 transition-all duration-300 shadow-lg bg-white/10 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 border border-gray-100"
           onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
           onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
         >

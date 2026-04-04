@@ -83,7 +83,7 @@ export default function Projects() {
         ></Modal>
         {projects.map((project) => (
           <SwiperSlide key={project.id} className="transition-all duration-500 !overflow-visible">
-            <div className="relative rounded-xl w-full min-h-96 mb-1 hover:transition-transform ease-in-out rounded-xl
+            <div className="relative z-10 rounded-xl w-full min-h-96 mb-1 hover:transition-transform ease-in-out rounded-xl
             duration-300 cursor-grab shadow-md p-2 border border-gray-200 transition-all" style={{ backgroundColor: 'var(--container-color)' }}>
               {project.id === 1 && (
                 <div 

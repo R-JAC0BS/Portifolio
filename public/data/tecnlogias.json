@@ -1,16 +1,32 @@
 {
-    "tecnologias" : [
-        "java",
-        "JavaScript",
-        "TypeScript",
-        "Python",
-        "Html",
-        "CSS",
-        "Springboot",
-        "React",
-        "PostgresSQL",
-        "MongoDB",
-        "AWS",
-        "docker"
-    ]
+    "BackEnd": {
+        "Titulo": "BackEnd",
+        "tecnologias": [
+            { "nome": "Java", "icon": "FaJava" },
+            { "nome": "Go", "icon": "SiGo" },
+            { "nome": "JavaScript", "icon": "SiJavascript" }
+        ]
+    },
+    "FrontEnd": {
+        "Titulo": "FrontEnd",
+        "tecnologias": [
+            { "nome": "React Web", "icon": "FaReact" },
+            { "nome": "Flutter", "icon": "SiFlutter" }
+        ]
+    },
+    "Devops": {
+        "Titulo": "Devops",
+        "tecnologias": [
+            { "nome": "Git", "icon": "FaGitAlt" },
+            { "nome": "Docker", "icon": "FaDocker" },
+            { "nome": "AWS", "icon": "FaAws" }
+        ]
+    },
+    "db": {
+        "Titulo": "DataBase",
+        "tecnologias": [
+            { "nome": "PostgreSQL", "icon": "SiPostgresql" },
+            { "nome": "MongoDB", "icon": "SiMongodb" }
+        ]
+    }
 }
