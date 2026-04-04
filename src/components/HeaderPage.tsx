@@ -4,9 +4,7 @@ import { PiGithubLogo } from "react-icons/pi";
 import { CiLinkedin } from "react-icons/ci";
 import Link from "next/link";
 
-const decoration = "relative before:absolute before:bottom-0 font before:left-0 before:h-1 before:w-full before:origin-left before:scale-x-0 before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-x-100" as const;
-
-const navItem = "px-3 py-1.5 rounded-lg transition-all duration-200  hover:scale-105 inline-block" as const;
+const navItem = "px-3 py-1.5 rounded-lg transition-all duration-200 hover:scale-105 inline-block" as const;
 
 export default function HeaderPage() {
   return (
