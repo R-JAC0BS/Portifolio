@@ -33,7 +33,6 @@ export default function Modal({
 
     if (isOpen) {
       setVisible(true);
-      // pequeno delay para disparar a animação
       setTimeout(() => setAnimate(true), 10);
       document.body.style.overflow = "hidden";
       document.getElementById("header")?.classList.add("hidden");

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowRightArrowLeft, FaStar } from "react-icons/fa6";
 import Image from "next/image";
 import Modal from '@/components/modal'
+import { GetSize } from "@/utils/getSize";
 import "swiper/css";
 
 type Project = {
@@ -18,11 +19,13 @@ type Project = {
   };
 };
 
+
+
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [openModal, setOpenModal] = useState(false);
   const [selectProject, setSelectProject] = useState<Project>();
-
+ 
 
   useEffect(() => {
     fetch("/data/projects.json")
@@ -34,7 +37,8 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="w-full px-4 py-10" id="projetos">
+    <div className="w-full px-4 py-10" id="projetos"
+  >
       <div className="max-w-7xl mx-auto">
         <div className="flex align-middle justify-between mb-6">
           <h1 className="text-3xl font-bold" style={{ color: 'var(--title-color)' }}>Projetos</h1>
@@ -83,8 +87,10 @@ export default function Projects() {
         ></Modal>
         {projects.map((project) => (
           <SwiperSlide key={project.id} className="transition-all duration-500 !overflow-visible">
-            <div className="relative z-10 rounded-xl w-full min-h-96 mb-1 hover:transition-transform ease-in-out rounded-xl
-            duration-300 cursor-grab shadow-md p-2 border border-gray-200 transition-all" style={{ backgroundColor: 'var(--container-color)' }}>
+           <div
+            className="relative z-10 rounded-xl w-full mb-1 cursor-grab shadow-md p-2 border border-gray-200 transition-all"
+        
+          >
               {project.id === 1 && (
                 <div 
                   className="absolute -top-3 left-4 px-3 py-1 rounded-md text-white text-xs font-bold shadow-md flex items-center gap-1"
@@ -95,9 +101,20 @@ export default function Projects() {
                 </div>
               )}
               <div></div> 
-              <div className="w-full h-72 inset-shadow-inherit rounded-xl">
-                <Image src={project.image } width={280} height={280} alt="image" className="w-full h-full bg-cover rounded-xl"></Image>
-              </div>
+             <div
+  className="w-full rounded-xl overflow-hidden"
+  style={{
+    height: GetSize.isMobile ? "200px" : "",
+  }}
+>
+  <Image
+    src={project.image}
+    width={280}
+    height={280}
+    alt="image"
+    className="w-full h-full object-cover rounded-xl"
+  />
+</div>
               <div className="mt-3 font-bold m-3" style={{ color: 'var(--title-color)' }}>{project.title}</div>
               <div className="mt-3 m-3" style={{ color: 'var(--text-color)' }}>{project.description.slice(0,100)}...</div>
 

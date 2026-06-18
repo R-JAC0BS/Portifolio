@@ -94,7 +94,7 @@ export default function Contato() {
             onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
             onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
           >
-            {!send ? "Enviar mensagem " : <FaCheck size={24} />}
+            {!send ? "Enviar" : <FaCheck size={24} />}
           </button>
           {sent && <p className="text-green-600 mt-4"></p>}
         </form>

@@ -4,7 +4,7 @@
         "tecnologias": [
             { "nome": "Java", "icon": "FaJava", "iconColor": "#f89820" },
             { "nome": "Go", "icon": "SiGo", "iconColor": "#00ADD8" },
-            { "nome": "JavaScript", "icon": "SiJavascript", "iconColor": "#F7DF1E" }
+            { "nome": "PHP", "icon": "RiPhpLine", "iconColor": "#777BB3" }
         ]
     },
     "FrontEnd": {

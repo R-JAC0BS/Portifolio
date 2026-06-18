@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as SiIcons from "react-icons/si";
+import * as riIcons from "react-icons/ri";
 import { IconType } from "react-icons";
 
 interface Tecnologia {
@@ -26,6 +27,7 @@ interface Tecnologias {
 function getIcon(name: string): IconType | null {
     return (FaIcons as Record<string, IconType>)[name]
         ?? (SiIcons as Record<string, IconType>)[name]
+        ?? (riIcons as Record<string, IconType>)[name]
         ?? null;
 }
 
