@@ -35,26 +35,46 @@ export default function Modal({
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
+    
+    const preventScroll = (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    };
+
     window.addEventListener("keydown", handleEsc);
 
     if (isOpen) {
       setVisible(true);
       setTimeout(() => setAnimate(true), 10);
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
       document.getElementById("header")?.classList.add("hidden");
-
-
+      
+      // Prevenir scroll em todos os eventos
+      window.addEventListener("wheel", preventScroll, { passive: false });
+      window.addEventListener("touchmove", preventScroll, { passive: false });
     } else {
       setAnimate(false);
       setTimeout(() => setVisible(false), 300);
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
       document.getElementById("header")?.classList.remove("hidden");
-
+      
+      // Remover listeners
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
     }
 
     return () => {
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
       window.removeEventListener("keydown", handleEsc);
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
     };
   }, [isOpen, onClose]);
 
@@ -64,69 +84,75 @@ export default function Modal({
     <div
       className={`fixed inset-0 flex w-full h-full justify-center 
         items-center backdrop-blur-sm backdrop-brightness-50 bg-opacity-30 p-3 
-        transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0 "
-
-        } `}
-      style={{ zIndex: 9999 }}
+        transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0"} `}
+      style={{ zIndex: 9999, overflow: 'hidden' }}
+      onClick={onClose}
     >
       <div
         className={`rounded-2xl shadow-lg flex flex-col 
-    w-full max-w-5xl h-11/12 max-h-[90vh] p-5
+    w-full max-w-5xl max-h-[90vh] p-5
     transform transition-all duration-300 
     overflow-y-auto border border-gray-200
     ${animate ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
         style={{ backgroundColor: 'var(--container-color)' }}
         onClick={(e) => e.stopPropagation()}
       >
-
-        <div className="w-full flex justify-end items-end ">
-          <button onClick={onClose}>
-            <IoCloseCircleOutline
-              size={30}
-              className="cursor-pointer transition-colors duration-300"
-              style={{ color: 'var(--title-color)' }}
-            />
-          </button>
-        </div>
-
-        <div className="w-full h-4/6 flex justify-center items-center p-5 pl-5 pr-5">
-          <div className="relative w-full h-full rounded-2xl shadow-lg">
-            <Image
-              src={image || "/default.jpg"}
-              alt="Modal Image"
-              fill
-              style={{ objectFit: 'cover' }}
-              className="rounded-2xl"
-            />
+        {/* Layout: Imagem à esquerda, Conteúdo à direita */}
+        <div className="flex flex-col md:flex-row gap-6">
+          {/* Imagem - Lado Esquerdo */}
+          <div className="w-full md:w-1/2 flex-shrink-0">
+            <div className="relative w-full h-80 md:h-[500px] rounded-2xl shadow-lg overflow-hidden">
+              <Image
+                src={image || "/default.jpg"}
+                alt="Modal Image"
+                fill
+                style={{ objectFit: 'cover' }}
+                className="rounded-2xl"
+              />
+            </div>
           </div>
-        </div>
-        <div className="pl-5 max-h-28 bg ">
-          <h1 className="font-bold text-2xl mb-1 transition-colors duration-300" style={{ color: 'var(--title-color)' }}>{title}</h1>
-          <p className={`max-h-17 break-words overflow-auto transition-colors duration-300`} style={{ color: 'var(--text-color)' }}>{description}</p>
 
-          <ul className="flex flex-wrap gap-5 mt-2  max-w-full">
-            {tecnologias?.map((tec, index) => (
-              <li
-                key={index}
-                className="rounded-2xl shadow px-4 py-1 flex justify-center items-center text-sm transition-colors duration-300"
-                style={{ backgroundColor: 'var(--body-color)', color: 'var(--title-color)' }}
-              >
-                {tec}
-              </li>
-            ))}
-          </ul>
+          {/* Conteúdo - Lado Direito */}
+          <div className="flex-1 flex flex-col relative">
+            {/* Botão de fechar no canto superior direito do texto */}
+            <button onClick={onClose} className="absolute -top-2 -right-2 md:top-0 md:right-0">
+              <IoCloseCircleOutline
+                size={30}
+                className="cursor-pointer transition-colors duration-300"
+                style={{ color: 'var(--title-color)' }}
+              />
+            </button>
 
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex text-white rounded-xl px-5 py-3 shadow-lg mt-3 transition-all duration-300 w-48 justify-between"
-            style={{ backgroundColor: 'var(--button-color)' }}
-            onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
-            onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-          >
-            Ver no GitHub <CiShare1 size={25} />
-          </a>
+            <h1 className="font-bold text-2xl mb-3 pr-8 transition-colors duration-300" style={{ color: 'var(--title-color)' }}>{title}</h1>
+            <p className="break-words mb-4 transition-colors duration-300" style={{ color: 'var(--text-color)' }}>{description}</p>
+
+            <div className="mb-4">
+              <h3 className="font-semibold mb-2" style={{ color: 'var(--title-color)' }}>Tecnologias:</h3>
+              <ul className="flex flex-wrap gap-2">
+                {tecnologias?.map((tec, index) => (
+                  <li
+                    key={index}
+                    className="rounded-2xl shadow px-4 py-1 flex justify-center items-center text-sm transition-colors duration-300"
+                    style={{ backgroundColor: 'var(--body-color)', color: 'var(--title-color)' }}
+                  >
+                    {tec}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-white rounded-xl px-5 py-3 shadow-lg mt-auto transition-all duration-300 w-full md:w-auto"
+              style={{ backgroundColor: 'var(--button-color)' }}
+              onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+              onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+            >
+              Ver no GitHub <CiShare1 size={25} />
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -174,21 +174,42 @@ function AllCertificadosModal({
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
+    
+    const preventScroll = (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    };
+
     window.addEventListener("keydown", handleEsc);
 
     if (isOpen) {
       setVisible(true);
       setTimeout(() => setAnimate(true), 10);
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      
+      window.addEventListener("wheel", preventScroll, { passive: false });
+      window.addEventListener("touchmove", preventScroll, { passive: false });
     } else {
       setAnimate(false);
       setTimeout(() => setVisible(false), 300);
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+      
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
     }
 
     return () => {
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
       window.removeEventListener("keydown", handleEsc);
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
     };
   }, [isOpen, onClose]);
 
@@ -199,7 +220,7 @@ function AllCertificadosModal({
       className={`fixed inset-0 flex w-full h-full justify-center 
         items-center backdrop-blur-sm backdrop-brightness-50 bg-opacity-30 p-4 
         transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0"}`}
-      style={{ zIndex: 9999 }}
+      style={{ zIndex: 9999, overflow: 'hidden' }}
       onClick={onClose}
     >
       <div
@@ -272,21 +293,42 @@ function CertificadoDetailModal({
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
+    
+    const preventScroll = (e: Event) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    };
+
     window.addEventListener("keydown", handleEsc);
 
     if (isOpen) {
       setVisible(true);
       setTimeout(() => setAnimate(true), 10);
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      
+      window.addEventListener("wheel", preventScroll, { passive: false });
+      window.addEventListener("touchmove", preventScroll, { passive: false });
     } else {
       setAnimate(false);
       setTimeout(() => setVisible(false), 300);
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
+      
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
     }
 
     return () => {
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
       window.removeEventListener("keydown", handleEsc);
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
     };
   }, [isOpen, onClose]);
 
@@ -297,7 +339,7 @@ function CertificadoDetailModal({
       className={`fixed inset-0 flex w-full h-full justify-center 
         items-center backdrop-blur-sm backdrop-brightness-50 bg-opacity-30 p-4 
         transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0"}`}
-      style={{ zIndex: 10000 }}
+      style={{ zIndex: 10000, overflow: 'hidden' }}
       onClick={onClose}
     >
       <div
