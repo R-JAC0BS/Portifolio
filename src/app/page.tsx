@@ -7,6 +7,7 @@ import Tecnologias from "@/components/tecnlogias";
 import Certificados from "@/components/Certificados";
 import Contato from "@/components/contato"
 import BackToTopButton from "@/components/BackToTopButton";
+import Loading from "@/components/Loading";
 
 
 export const metadata = {
@@ -15,7 +16,9 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col pt-15 min-h-screen p-8 gap-16 sm:p-12 font-[family-name:var(--font-geist-sans)] transition-colors duration-300 relative overflow-x-hidden" style={{ backgroundColor: 'var(--body-color)' }}>
+    <>
+      <Loading />
+      <div className="flex flex-col pt-15 min-h-screen p-8 gap-16 sm:p-12 font-[family-name:var(--font-geist-sans)] transition-colors duration-300 relative overflow-x-hidden" style={{ backgroundColor: 'var(--body-color)' }}>
       {/* Dot pattern background */}
       <div className="fixed inset-0 z-0 pointer-events-none" style={{
         backgroundImage: "radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.12) 1px, transparent 0)",
@@ -39,5 +42,6 @@ export default function Home() {
       <Contato/>
       <BackToTopButton />
     </div>
+    </>
   );
 }
