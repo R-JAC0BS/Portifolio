@@ -1,0 +1,114 @@
+{
+  "Certificados": [
+    {
+      "id": 1,
+      "titulo": "AWS Certified Cloud Practitioner",
+      "emissor": "Amazon Web Services (AWS)",
+      "dataCompletado": "Apr 2025",
+      "logo": "/images/aws.png",
+      "imagemCertificado": "/images/1744738699340.jpg",
+      "descricao": "Certificação oficial AWS Cloud Practitioner que valida o conhecimento geral da nuvem AWS, seus principais serviços, segurança, arquitetura e precificação. Válida até abril de 2028.",
+      "linkVerificacao": "https://aws.amazon.com/verification/88f88846c764475e9ea7ca420c79927e"
+    },
+    {
+      "id": 2,
+      "titulo": "Flutter: introdução ao desenvolvimento de aplicativos móveis",
+      "emissor": "Alura",
+      "dataCompletado": "Feb 2026",
+      "logo": "/images/alura.png",
+      "imagemCertificado": "/images/aplicativosMoveis.jpg",
+      "descricao": "Curso completo de Flutter cobrindo instalação e configuração, criação e execução de projetos, widgets de layout, ciclo de vida e gerência de estado em aplicativos móveis.",
+      "linkVerificacao": "https://cursos.alura.com.br/certificate/44844b6d-0e31-47bb-b17e-3fecefe93a0e"
+    },
+    {
+      "id": 3,
+      "titulo": "Computação distribuída e hardware",
+      "emissor": "Atitus Educação",
+      "dataCompletado": "Oct 2025",
+      "logo": "/images/atitus.png",
+      "imagemCertificado": "/images/Computação Distribuída.jpg",
+      "descricao": "Qualificação focada em hardware e computação distribuída, com desenvolvimento de projetos físicos utilizando Raspberry Pi e Arduino, criação de máquinas virtuais com Docker e uso do sistema operacional Linux.",
+      "linkVerificacao": "https://atitus.edu.br/verify/cc4f1ef66530"
+    },
+    {
+      "id": 4,
+      "titulo": "Clean Architecture com Java",
+      "emissor": "Alura",
+      "dataCompletado": "Oct 2025",
+      "logo": "/images/alura.png",
+      "imagemCertificado": "/images/descomplicando a Clean Architecture.jpg",
+      "descricao": "Curso intensivo de 6 horas com foco em Arquitetura Limpa aplicada em Java. Aprendi a descomplicar a Clean Architecture e aplicar seus princípios em projetos reais.",
+      "linkVerificacao": "https://cursos.alura.com.br/certificate/"
+    },
+    {
+      "id": 5,
+      "titulo": "Boas práticas de programação: melhore o código de uma API Java",
+      "emissor": "Alura",
+      "dataCompletado": "Sep 2025",
+      "logo": "/images/alura.png",
+      "imagemCertificado": "/images/Roberto Jacobs Alerico - Curso Boas práticas de programação_ melhore o código de uma API Java.jpg",
+      "descricao": "Aprendi a identificar práticas ruins em código, separar corretamente as responsabilidades do projeto, utilizar técnicas de refatoração, aplicar padrões de projeto e otimizar consultas ao banco de dados.",
+      "linkVerificacao": "https://cursos.alura.com.br/certificate/"
+    },
+    {
+      "id": 6,
+      "titulo": "Microsserviços na prática",
+      "emissor": "Alura",
+      "dataCompletado": "Sep 2025",
+      "logo": "/images/alura.png",
+      "imagemCertificado": "/images/Microsserviços na prática.jpg",
+      "descricao": "Implementação prática de microsserviços com Java e Spring, incluindo comunicação entre serviços, descoberta de serviços com Eureka Server, balanceamento de carga e resiliência.",
+      "linkVerificacao": "https://cursos.alura.com.br/certificate/"
+    },
+    {
+      "id": 7,
+      "titulo": "React: aplicações tipadas e escaláveis com TypeScript",
+      "emissor": "Alura",
+      "dataCompletado": "Aug 2025",
+      "logo": "/images/alura.png",
+      "imagemCertificado": "/images/ReactDesenvolva.jpg",
+      "descricao": "Integração do TypeScript em aplicações React, compreensão de tipos básicos e complexos usando types e union types, generics, tipagem de hooks, eventos e retornos de API's.",
+      "linkVerificacao": "https://cursos.alura.com.br/certificate/aae8b440-e407-42ed-9758-764afa1dac54"
+    },
+    {
+      "id": 8,
+      "titulo": "Santander Back-End Java",
+      "emissor": "DIO",
+      "dataCompletado": "Jul 2025",
+      "logo": "/images/dio.png",
+      "imagemCertificado": "/images/BackEndJavaDio.jpg",
+      "descricao": "BootCamp completo de Back-End Java patrocinado pelo Santander, cobrindo desenvolvimento de APIs REST, bancos de dados NoSQL e SQL, padrões de projeto e boas práticas.",
+      "linkVerificacao": "https://www.dio.me/certificate/2N28YXXL"
+    },
+    {
+      "id": 9,
+      "titulo": "Desenvolvimento de aplicações JR",
+      "emissor": "Atitus Educação",
+      "dataCompletado": "Jun 2024",
+      "logo": "/images/atitus.png",
+      "imagemCertificado": "/images/aplicacoes.jpg",
+      "descricao": "Formação completa em desenvolvimento de aplicações web, cobrindo HTML, CSS, JavaScript, Java, frameworks modernos e boas práticas de desenvolvimento.",
+      "linkVerificacao": "https://drive.google.com/file/d/1fR-g9PfOKMM1-LwsJBhrmjYK_XM0GFup/view"
+    },
+    {
+      "id": 10,
+      "titulo": "AWS Certified Cloud Practitioner Essentials",
+      "emissor": "Amazon Web Services (AWS)",
+      "dataCompletado": "Mar 2025",
+      "logo": "/images/aws.png",
+      "imagemCertificado": "/images/1744738699340.jpg",
+      "descricao": "Curso preparatório oficial da AWS para a certificação Cloud Practitioner, cobrindo fundamentos de cloud computing, principais serviços AWS e melhores práticas.",
+      "linkVerificacao": "https://aws.amazon.com/training/"
+    },
+    {
+      "id": 11,
+      "titulo": "Teste e QA",
+      "emissor": "Udemy",
+      "dataCompletado": "Dec 2024",
+      "logo": "/images/udemy.png",
+      "imagemCertificado": "/images/Qa.jpg",
+      "descricao": "Curso completo sobre testes de software e Quality Assurance, incluindo testes unitários, de integração, automatizados e ferramentas de teste modernas.",
+      "linkVerificacao": "https://www.udemy.com/certificate/UC-4d1e26ea-f105-478a-b817-c15261a6141c"
+    }
+  ]
+}

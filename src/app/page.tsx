@@ -4,6 +4,7 @@ import MarginComponent from "@/components/MarginComponent";
 import Projects from "@/components/projects";
 import About from "@/components/About";
 import Tecnologias from "@/components/tecnlogias";
+import Certificados from "@/components/Certificados";
 import Contato from "@/components/contato"
 import BackToTopButton from "@/components/BackToTopButton";
 
@@ -34,6 +35,7 @@ export default function Home() {
       <About />
       <Projects />
       <Tecnologias/>
+      <Certificados/>
       <Contato/>
       <BackToTopButton />
     </div>

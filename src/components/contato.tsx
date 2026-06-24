@@ -45,7 +45,7 @@ export default function Contato() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-3 mt-2 h-1/3 resize-none" id="contato">
+    <div className="flex flex-col items-center justify-center p-3 mt-2 h-1/3 resize-none relative z-10" id="contato">
       <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--title-color)' }}>Entre em contato</h2>
       <div className="flex flex-col md:flex-row w-full justify-center items-center md:items-start gap-16">
      
@@ -60,7 +60,7 @@ export default function Contato() {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="relative z-10 p-6 rounded-3xl shadow-lg w-full md:w-5/12 items-center justify-center resize-none mt-10 border border-gray-200"
+          className="p-6 rounded-3xl shadow-lg w-full md:w-5/12 items-center justify-center resize-none mt-10 border border-gray-200"
           style={{ backgroundColor: 'var(--container-color)' }}
         >
           <input

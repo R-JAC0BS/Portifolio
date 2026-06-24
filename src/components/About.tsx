@@ -24,7 +24,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto py-16 px-4 grid md:grid-cols-3 gap-10 items-center">
+    <div className="max-w-6xl mx-auto py-16 px-4 grid md:grid-cols-3 gap-10 items-center relative z-10">
 
       <div className="flex justify-center items-center">
         {about ? (

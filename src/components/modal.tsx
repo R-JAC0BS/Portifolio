@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { CiShare1 } from "react-icons/ci";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 
 type ModalProps = {
   isOpen: boolean;
@@ -24,6 +25,11 @@ export default function Modal({
 }: ModalProps) {
   const [visible, setVisible] = useState(false);
   const [animate, setAnimate] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -52,15 +58,16 @@ export default function Modal({
     };
   }, [isOpen, onClose]);
 
-  if (!visible) return null;
+  if (!visible || !mounted) return null;
 
-  return (
+  const modalContent = (
     <div
-      className={`z-50 fixed inset-0 flex w-full h-full justify-center 
+      className={`fixed inset-0 flex w-full h-full justify-center 
         items-center backdrop-blur-sm backdrop-brightness-50 bg-opacity-30 p-3 
         transition-opacity duration-300 ${animate ? "opacity-100" : "opacity-0 "
 
         } `}
+      style={{ zIndex: 9999 }}
     >
       <div
         className={`rounded-2xl shadow-lg flex flex-col 
@@ -124,4 +131,6 @@ export default function Modal({
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
