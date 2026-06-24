@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowRightArrowLeft, FaStar, FaChevronDown } from "react-icons/fa6";
@@ -28,7 +29,6 @@ export default function Projects() {
   const [openModal, setOpenModal] = useState(false);
   const [openGridModal, setOpenGridModal] = useState(false);
   const [selectProject, setSelectProject] = useState<Project>();
-  const [searchTerm, setSearchTerm] = useState("");
  
 
   useEffect(() => {
@@ -39,16 +39,6 @@ export default function Projects() {
       })
       .catch((err) => console.error("Erro ao carregar JSON:", err));
   }, []);
-
-  // Filtrar projetos
-  const filteredProjects = projects.filter((project) => {
-    const searchLower = searchTerm.toLowerCase();
-    const matchesName = project.title.toLowerCase().includes(searchLower);
-    const matchesTech = project.details.tecnologias.some((tech) =>
-      tech.toLowerCase().includes(searchLower)
-    );
-    return matchesName || matchesTech;
-  });
 
   return (
     <div className="w-full px-4 py-10 relative z-10" id="projetos"
@@ -171,7 +161,7 @@ export default function Projects() {
         <GridProjectsModal 
           isOpen={openGridModal} 
           onClose={() => setOpenGridModal(false)}
-          projects={filteredProjects}
+          projects={projects}
           onSelectProject={(project) => {
             setSelectProject(project);
             setOpenModal(true);
@@ -362,7 +352,7 @@ function GridProjectsModal({
   );
 
   if (typeof window !== 'undefined') {
-    return require('react-dom').createPortal(modalContent, document.body);
+    return createPortal(modalContent, document.body);
   }
   
   return null;
