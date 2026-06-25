@@ -300,7 +300,7 @@ function GridProjectsModal({
               {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="rounded-xl border border-gray-200 shadow-md p-3 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="rounded-xl border border-gray-200 shadow-md p-3 cursor-pointer"
                 style={{ backgroundColor: 'var(--body-color)' }}
               >
                 {/* Imagem */}

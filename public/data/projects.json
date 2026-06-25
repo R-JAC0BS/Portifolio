@@ -94,7 +94,26 @@
                 
             }
             
+        },
+        {
+            "id" : 6,
+            "title" : "Shadow Woods Game",
+            "description" : 
+            "Projeto Game 2d desenvolvido na Unity",
+            "image" : "/images/ShadowWoods.jpg",
+            "details" : {
+                "tecnologias" : [
+                    "C#",
+                    "Unity"
+                ],
+                "link" : "https://github.com/R-JAC0BS/Shadow-Woods-Game"
+                
+            }
+            
         }
 
     ]
 }
+
+
+
