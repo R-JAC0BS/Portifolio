@@ -68,7 +68,6 @@ export default function Certificados() {
           </div>
         )}
 
-        {/* Modal - Todos os Certificados */}
         <AllCertificadosModal
           isOpen={openAllModal}
           onClose={() => setOpenAllModal(false)}
@@ -90,7 +89,7 @@ export default function Certificados() {
   );
 }
 
-// Card de Certificado
+
 function CertificadoCard({
   certificado,
   onVerify,
@@ -129,20 +128,23 @@ function CertificadoCard({
 
         {/* Botões */}
         <div className="flex gap-3 mt-3">
-          <button
-            className="flex-1 px-4 py-2 rounded-lg text-white text-sm font-medium transition-all duration-300"
+          <a
+            href={certificado.linkVerificacao}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 px-4 py-2 rounded-lg text-white text-sm font-medium transition-all duration-300 text-center"
             style={{ backgroundColor: 'var(--button-color)' }}
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
-            View Certificate
-          </button>
+            Ver certificado
+          </a>
           <button
             onClick={onVerify}
             className="flex-1 px-4 py-2 rounded-lg text-sm font-medium border border-gray-300 hover:bg-gray-100 transition-all duration-300"
             style={{ color: 'var(--title-color)' }}
           >
-            Verify
+            Detalhes
           </button>
         </div>
       </div>

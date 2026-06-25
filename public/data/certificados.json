@@ -109,6 +109,16 @@
       "imagemCertificado": "/images/Qa.jpg",
       "descricao": "Curso completo sobre testes de software e Quality Assurance, incluindo testes unitários, de integração, automatizados e ferramentas de teste modernas.",
       "linkVerificacao": "https://www.udemy.com/certificate/UC-4d1e26ea-f105-478a-b817-c15261a6141c"
+    },
+    {
+      "id": 12,
+      "titulo": "Praticando SQL",
+      "emissor": "Alura",
+      "dataCompletado": "Dec 2024",
+      "logo": "/images/alura.png",
+      "imagemCertificado": "/images/sql.png",
+      "descricao": "Curso completo sobre testes de software e Quality Assurance, incluindo testes unitários, de integração, automatizados e ferramentas de teste modernas.",
+      "linkVerificacao": "https://cursos.alura.com.br/user/e-ralerico/course/sql-realizando-consultas/formalCertificate"
     }
   ]
 }
