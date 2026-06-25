@@ -8,7 +8,8 @@
       "logo": "/images/aws.png",
       "imagemCertificado": "/images/1744738699340.jpg",
       "descricao": "Certificação oficial AWS Cloud Practitioner que valida o conhecimento geral da nuvem AWS, seus principais serviços, segurança, arquitetura e precificação. Válida até abril de 2028.",
-      "linkVerificacao": "https://aws.amazon.com/verification/88f88846c764475e9ea7ca420c79927e"
+      "linkVerificacao": "https://aws.amazon.com/verification/88f88846c764475e9ea7ca420c79927e",
+      "budget": "/images/awsbud.png"
     },
     {
       "id": 2,
@@ -98,7 +99,8 @@
       "logo": "/images/aws.png",
       "imagemCertificado": "/images/1744738699340.jpg",
       "descricao": "Curso preparatório oficial da AWS para a certificação Cloud Practitioner, cobrindo fundamentos de cloud computing, principais serviços AWS e melhores práticas.",
-      "linkVerificacao": "https://aws.amazon.com/training/"
+      "linkVerificacao": "https://aws.amazon.com/training/",
+      "budget": "/images/awsbud.png"
     },
     {
       "id": 11,

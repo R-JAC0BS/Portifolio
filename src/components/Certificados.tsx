@@ -14,6 +14,7 @@ type Certificado = {
   imagemCertificado: string;
   descricao: string;
   linkVerificacao: string;
+  budget?: string;
 };
 
 export default function Certificados() {
@@ -99,9 +100,21 @@ function CertificadoCard({
 }) {
   return (
     <div
-      className="flex gap-4 p-5 rounded-xl border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl"
+      className="flex gap-4 p-5 rounded-xl border border-gray-200 shadow-md transition-all duration-300 hover:shadow-xl relative"
       style={{ backgroundColor: 'var(--container-color)' }}
     >
+      {/* Budget Badge - Canto Superior Direito */}
+      {certificado.budget && (
+        <div className="absolute top-3 right-3 w-12 h-12">
+          <Image
+            src={certificado.budget}
+            alt="Budget"
+            fill
+            className="object-contain"
+          />
+        </div>
+      )}
+
       {/* Logo */}
       <div className="flex-shrink-0 w-20 h-20 relative">
         <Image
