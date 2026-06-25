@@ -12,6 +12,7 @@ type ModalProps = {
   description?: string;
   image?: string;
   link?: string;
+  deploy?: string;
 };
 
 export default function Modal({
@@ -21,7 +22,8 @@ export default function Modal({
   tecnologias,
   description,
   image,
-  link
+  link,
+  deploy
 }: ModalProps) {
   const [visible, setVisible] = useState(false);
   const [animate, setAnimate] = useState(false);
@@ -47,8 +49,13 @@ export default function Modal({
     if (isOpen) {
       setVisible(true);
       setTimeout(() => setAnimate(true), 10);
+      
+      // Salvar posição atual do scroll
+      const scrollY = window.scrollY;
+      
       document.body.style.overflow = "hidden";
       document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
       document.body.style.width = "100%";
       document.getElementById("header")?.classList.add("hidden");
       
@@ -58,9 +65,15 @@ export default function Modal({
     } else {
       setAnimate(false);
       setTimeout(() => setVisible(false), 300);
+      
+      // Restaurar posição do scroll
+      const scrollY = document.body.style.top;
       document.body.style.overflow = "";
       document.body.style.position = "";
+      document.body.style.top = "";
       document.body.style.width = "";
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      
       document.getElementById("header")?.classList.remove("hidden");
       
       // Remover listeners
@@ -71,6 +84,7 @@ export default function Modal({
     return () => {
       document.body.style.overflow = "";
       document.body.style.position = "";
+      document.body.style.top = "";
       document.body.style.width = "";
       window.removeEventListener("keydown", handleEsc);
       window.removeEventListener("wheel", preventScroll);
@@ -141,17 +155,30 @@ export default function Modal({
               </ul>
             </div>
 
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 text-white rounded-xl px-5 py-3 shadow-lg mt-auto transition-all duration-300 w-full md:w-auto"
-              style={{ backgroundColor: 'var(--button-color)' }}
-              onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
-              onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-            >
-              Ver no GitHub <CiShare1 size={25} />
-            </a>
+            <div className="flex gap-3 mt-auto">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 text-white rounded-xl px-5 py-3 shadow-lg transition-all duration-300 flex-1"
+                style={{ backgroundColor: 'var(--button-color)' }}
+                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+              >
+                Ver no GitHub <CiShare1 size={25} />
+              </a>
+
+              {deploy && (
+                <a
+                  href={deploy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 text-white rounded-xl px-5 py-3 shadow-lg transition-all duration-300 flex-1 bg-black hover:bg-gray-800"
+                >
+                  Visualizar Deploy <CiShare1 size={25} />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>

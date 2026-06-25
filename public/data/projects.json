@@ -1,7 +1,29 @@
 {
     "Projects" : [
-        {
+        
+
+           {
             "id" : 1,
+            "title" : "LTFU prediction ",
+            "description" : "Este projeto apresenta o desenvolvimento e a comparação de modelos de Machine Learning para a predição do risco de perda de seguimento / abandono do tratamento de Tuberculose (LTFU - Loss to Follow-up), utilizando dados reais de saúde pública do SINAN (Sistema de Informação de Agravos de Notificação).",
+            "image" : "/images/tuber.png",
+            "details" : {
+                "tecnologias" : [
+                    "Python",
+                    "JavaScript",
+                    "HTML",
+                    "CSS"
+                ],
+                "link" : "https://github.com/R-JAC0BS/Workout_Tracker---flutter"
+                
+            },
+            "deploy" : "https://tuberculose-prediction.onrender.com/"
+            
+        },
+
+
+        {
+            "id" : 7,
             "title" : "TrainingTracker ",
             "description" : 
             "O Workout Tracker é um aplicativo completo para gerenciamento de treinos que permite criar divisões personalizadas, acompanhar o progresso de cada exercício e visualizar estatísticas detalhadas do seu desempenho ao longo do tempo.",
@@ -14,7 +36,9 @@
                 ],
                 "link" : "https://github.com/R-JAC0BS/Workout_Tracker---flutter"
                 
-            }
+            },
+
+            "deploy" : "https://github.com/R-JAC0BS/Workout_Tracker---flutter/releases/tag/Release"
             
         },
         {
@@ -108,6 +132,21 @@
                 ],
                 "link" : "https://github.com/R-JAC0BS/Shadow-Woods-Game"
                 
+            }
+            
+        },
+             {
+            "id" : 8,
+            "title" : "Swapi native",
+            "description" : 
+            "Projeto de estudos sobre React Native aplicativo de vizualização de personagens de star wars",
+            "image" : "/images/swap.png",
+            "details" : {
+                "tecnologias" : [
+                    "React Native",
+                    "JavaScript"
+                ],
+                "link" : "https://github.com/R-JAC0BS/SWAPI-NATIVE"
             }
             
         }

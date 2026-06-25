@@ -16,6 +16,7 @@ type Project = {
   title: string;
   description: string;
   image: string;
+  deploy?: string;
   details: {
     tecnologias: string[];
     link: string;
@@ -87,12 +88,12 @@ export default function Projects() {
         >
         <Modal isOpen={openModal} onClose={() => setOpenModal(false)} title={selectProject?.title}
           description={selectProject?.description} tecnologias={selectProject?.details.tecnologias}
-          image={selectProject?.image} link = {selectProject?.details.link}
+          image={selectProject?.image} link={selectProject?.details.link} deploy={selectProject?.deploy}
         ></Modal>
         {projects.map((project) => (
           <SwiperSlide key={project.id} className="transition-all duration-500 !overflow-visible">
            <div
-            className="relative z-10 rounded-xl w-full mb-1 cursor-grab shadow-md p-2 border border-gray-200 transition-all"
+            className="relative z-10 rounded-xl w-full mb-1 cursor-grab shadow-md p-2 border border-gray-200 transition-all flex flex-col h-[480px]"
         
           >
               {project.id === 1 && (
@@ -104,11 +105,10 @@ export default function Projects() {
                   <FaStar size={10} />
                 </div>
               )}
-              <div></div> 
              <div
-  className="w-full rounded-xl overflow-hidden"
+  className="w-full rounded-xl overflow-hidden flex-shrink-0"
   style={{
-    height: GetSize.isMobile ? "200px" : "",
+    height: GetSize.isMobile ? "200px" : "250px",
   }}
 >
   <Image
@@ -120,9 +120,9 @@ export default function Projects() {
   />
 </div>
               <div className="mt-3 font-bold m-3" style={{ color: 'var(--title-color)' }}>{project.title}</div>
-              <div className="mt-3 m-3" style={{ color: 'var(--text-color)' }}>{project.description.slice(0,100)}...</div>
+              <div className="mt-3 m-3 flex-1 overflow-hidden" style={{ color: 'var(--text-color)' }}>{project.description.slice(0,100)}...</div>
 
-              <div className=" w-full justify-between flex p-3  ">
+              <div className="w-full justify-between flex p-3 mt-auto">
                 <button className=" cursor-pointer text-white rounded-xl w-2/5 h-10 transition-all duration-300"
                   style={{ backgroundColor: 'var(--button-color)' }}
                   onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
@@ -300,11 +300,11 @@ function GridProjectsModal({
               {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="rounded-xl border border-gray-200 shadow-md p-3 cursor-pointer"
+                className="rounded-xl border border-gray-200 shadow-md p-3 cursor-pointer flex flex-col h-[400px]"
                 style={{ backgroundColor: 'var(--body-color)' }}
               >
                 {/* Imagem */}
-                <div className="w-full h-48 rounded-xl overflow-hidden mb-3">
+                <div className="w-full h-48 rounded-xl overflow-hidden mb-3 flex-shrink-0">
                   <Image
                     src={project.image}
                     width={280}
@@ -315,32 +315,34 @@ function GridProjectsModal({
                 </div>
 
                 {/* Conteúdo */}
-                <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--title-color)' }}>
-                  {project.title}
-                </h3>
-                <p className="text-sm mb-4 line-clamp-2" style={{ color: 'var(--text-color)' }}>
-                  {project.description}
-                </p>
+                <div className="flex-1 flex flex-col">
+                  <h3 className="font-bold text-lg mb-2" style={{ color: 'var(--title-color)' }}>
+                    {project.title}
+                  </h3>
+                  <p className="text-sm mb-4 line-clamp-3 flex-1" style={{ color: 'var(--text-color)' }}>
+                    {project.description}
+                  </p>
 
-                {/* Botões */}
-                <div className="flex gap-2">
-                  <button
-                    className="flex-1 text-white rounded-lg py-2 text-sm transition-all duration-300"
-                    style={{ backgroundColor: 'var(--button-color)' }}
-                    onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
-                    onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-                    onClick={() => onSelectProject(project)}
-                  >
-                    Detalhes
-                  </button>
-                  <button
-                    className="flex-1 border border-gray-300 hover:bg-gray-100 rounded-lg py-2 text-sm transition-all duration-300"
-                    style={{ color: 'var(--title-color)' }}
-                  >
-                    <a href={project.details.link} target="_blank" rel="noopener noreferrer">
-                      Github
-                    </a>
-                  </button>
+                  {/* Botões */}
+                  <div className="flex gap-2 mt-auto">
+                    <button
+                      className="flex-1 text-white rounded-lg py-2 text-sm transition-all duration-300"
+                      style={{ backgroundColor: 'var(--button-color)' }}
+                      onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                      onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                      onClick={() => onSelectProject(project)}
+                    >
+                      Detalhes
+                    </button>
+                    <button
+                      className="flex-1 border border-gray-300 hover:bg-gray-100 rounded-lg py-2 text-sm transition-all duration-300"
+                      style={{ color: 'var(--title-color)' }}
+                    >
+                      <a href={project.details.link} target="_blank" rel="noopener noreferrer">
+                        Github
+                      </a>
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

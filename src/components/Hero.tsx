@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen text-center relative z-10 -mx-8 sm:-mx-12 -mt-20">
       <div className="absolute inset-0 z-0" style={{ pointerEvents: 'none' }}>
-        <Threads amplitude={1.5} distance={0.3} enableMouseInteraction color={[1, 1, 1]} />
+        <Threads amplitude={1.5} distance={0.3} enableMouseInteraction color={[0.4, 0.4, 0.5]} />
       </div>
 
       <SplitText
