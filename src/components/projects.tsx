@@ -202,16 +202,13 @@ function GridProjectsModal({
     if (isOpen) {
       setVisible(true);
       setTimeout(() => setAnimate(true), 10);
-      document.body.style.overflow = "hidden";
     } else {
       setAnimate(false);
       setTimeout(() => setVisible(false), 300);
-      document.body.style.overflow = "";
-      setSearchTerm(""); // Limpa a busca ao fechar
+      setSearchTerm("");
     }
 
     return () => {
-      document.body.style.overflow = "";
       window.removeEventListener("keydown", handleEsc);
     };
   }, [isOpen, onClose]);

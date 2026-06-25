@@ -37,58 +37,20 @@ export default function Modal({
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
-    
-    const preventScroll = (e: Event) => {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    };
-
     window.addEventListener("keydown", handleEsc);
 
     if (isOpen) {
       setVisible(true);
       setTimeout(() => setAnimate(true), 10);
-      
-      // Salvar posição atual do scroll
-      const scrollY = window.scrollY;
-      
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = "100%";
       document.getElementById("header")?.classList.add("hidden");
-      
-      // Prevenir scroll em todos os eventos
-      window.addEventListener("wheel", preventScroll, { passive: false });
-      window.addEventListener("touchmove", preventScroll, { passive: false });
     } else {
       setAnimate(false);
       setTimeout(() => setVisible(false), 300);
-      
-      // Restaurar posição do scroll
-      const scrollY = document.body.style.top;
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
-      
       document.getElementById("header")?.classList.remove("hidden");
-      
-      // Remover listeners
-      window.removeEventListener("wheel", preventScroll);
-      window.removeEventListener("touchmove", preventScroll);
     }
 
     return () => {
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
       window.removeEventListener("keydown", handleEsc);
-      window.removeEventListener("wheel", preventScroll);
-      window.removeEventListener("touchmove", preventScroll);
     };
   }, [isOpen, onClose]);
 

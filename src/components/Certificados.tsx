@@ -174,42 +174,18 @@ function AllCertificadosModal({
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
-    
-    const preventScroll = (e: Event) => {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    };
-
     window.addEventListener("keydown", handleEsc);
 
     if (isOpen) {
       setVisible(true);
       setTimeout(() => setAnimate(true), 10);
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
-      document.body.style.width = "100%";
-      
-      window.addEventListener("wheel", preventScroll, { passive: false });
-      window.addEventListener("touchmove", preventScroll, { passive: false });
     } else {
       setAnimate(false);
       setTimeout(() => setVisible(false), 300);
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.width = "";
-      
-      window.removeEventListener("wheel", preventScroll);
-      window.removeEventListener("touchmove", preventScroll);
     }
 
     return () => {
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.width = "";
       window.removeEventListener("keydown", handleEsc);
-      window.removeEventListener("wheel", preventScroll);
-      window.removeEventListener("touchmove", preventScroll);
     };
   }, [isOpen, onClose]);
 
